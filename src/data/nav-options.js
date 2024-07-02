@@ -8,26 +8,31 @@ export const navOptions = [
     {
         id: 1,
         Icon: GrHomeRounded,
-        navTitle: "Home"
+        navTitle: "Home",
+        notification: null
     },
     {
         id: 2,
         Icon: CiCalendar,
-        navTitle: "Appointments"
+        navTitle: "Appointments",
+        notification: null
     },
     {
         id: 3,
         Icon: PiChatCircleText,
-        navTitle: "Symptom Checker"
+        navTitle: "Symptom Checker",
+        notification: null
     },
     {
         id: 4,
         Icon: MdOutlineBookmarkAdd,
-        navTitle: "My Health"
+        navTitle: "My Health",
+        notification: null
     },
     {
-        id: 1,
+        id: 5,
         Icon: LuCross,
-        navTitle: "Mental Support"
+        navTitle: "Mental Support",
+        notification: 2
     },
 ]

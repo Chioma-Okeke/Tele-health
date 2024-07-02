@@ -8,3 +8,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
+
+#gallery::-webkit-scrollbar {
+  display: none;
+}

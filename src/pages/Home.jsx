@@ -9,9 +9,9 @@ function Home() {
   return (
     <div className="bg-[#fcfcfd] flex items-start gap-5">
         <Navbar currentPage="Home"/>
-        <div>
+        <div className="w-full">
             <Header title="Home"/>
-            <div className="flex items-start gap-5 pr-5 w-full">
+            <div className="flex items-start justify-center gap-5 pr-5 w-full relative">
                 <MainComponent/>
                 <SideComponent/>
             </div>
