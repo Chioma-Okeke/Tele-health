@@ -1,9 +1,12 @@
-import React from 'react'
+import React from "react";
+import { Link } from "react-router-dom";
 
 function FirstPage() {
-  return (
-    <div>FirstPage</div>
-  )
+    return (
+        <div>
+            <Link to="/home">FirstPage</Link>
+        </div>
+    );
 }
 
-export default FirstPage
+export default FirstPage;
