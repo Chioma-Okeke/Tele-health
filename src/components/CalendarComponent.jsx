@@ -163,7 +163,7 @@ export default function CalendarComponent() {
                                                 "text-black",
                                             !isEqual(day, selectedDay) &&
                                                 isToday(day) &&
-                                                "text-[#70FFBA]",
+                                                "text-red-500  ",
                                             !isEqual(day, selectedDay) &&
                                                 !isToday(day) &&
                                                 isSameMonth(
@@ -197,18 +197,19 @@ export default function CalendarComponent() {
                                         >
                                             {format(day, "d")}
                                         </time>
-                                    <div className="w-1 h-1 mx-auto mt-1">
-                                        {meetings.some((meeting) =>
-                                            isSameDay(
-                                                parseISO(meeting.startDatetime),
-                                                day
-                                            )
-                                        ) && (
-                                            <div className="absolute right-0 top-0 w-2 h-2 rounded-tr-full rounded-tl-3xl bg-[#006635]"></div>
-                                        )}
-                                    </div>
+                                        <div className="w-1 h-1 mx-auto mt-1">
+                                            {meetings.some((meeting) =>
+                                                isSameDay(
+                                                    parseISO(
+                                                        meeting.startDatetime
+                                                    ),
+                                                    day
+                                                )
+                                            ) && (
+                                                <div className="absolute right-0 top-0 w-2 h-2 rounded-tr-full rounded-tl-3xl bg-[#006635]"></div>
+                                            )}
+                                        </div>
                                     </button>
-
                                 </div>
                             ))}
                         </div>
@@ -251,7 +252,9 @@ function Meeting({ meeting }) {
                 className="flex-none w-10 h-10 rounded-full"
             /> */}
             <div className="flex-auto mb-2">
-                <p className="text-gray-900 text-base">{meeting.practitionerName}</p>
+                <p className="text-gray-900 text-base">
+                    {meeting.practitionerName}
+                </p>
                 <p>{meeting.jobTitle}</p>
             </div>
             <div className="text-sm">
@@ -273,8 +276,12 @@ function Meeting({ meeting }) {
                 </div>
             </div>
             <div className="flex items-center justify-center gap-3 2xl:gap-5">
-                <button className="py-2 px-5 2xl:px-9 border border-[#E0E3EB] rounded-md font-semibold text-[#141414]">Reschedule</button>
-                <button className="py-2 px-3 text-[#006635] bg-[#E5FFF3] rounded-md font-semibold">Join Now</button>
+                <button className="py-2 px-5 2xl:px-9 border border-[#E0E3EB] rounded-md font-semibold text-[#141414]">
+                    Reschedule
+                </button>
+                <button className="py-2 px-3 text-[#006635] bg-[#E5FFF3] rounded-md font-semibold">
+                    Join Now
+                </button>
             </div>
             <Menu
                 as="div"

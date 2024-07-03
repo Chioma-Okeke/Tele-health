@@ -1,8 +1,9 @@
-import React from 'react'
+import React from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
 import { PhysicianContext } from "../../context/PhysicianContext";
 import { useContext } from "react";
 import PhysicianCard from "../PhysicianCard";
+import { Link } from "react-router-dom";
 
 function FindSpecialist() {
     const { physicians } = useContext(PhysicianContext);
@@ -32,7 +33,7 @@ function FindSpecialist() {
         // Attach event listener to gallery element
         const gallery = galleryRef.current;
         if (gallery) {
-            gallery.addEventListener('scroll', handleScroll);
+            gallery.addEventListener("scroll", handleScroll);
         }
 
         // Initial check on component mount
@@ -41,26 +42,19 @@ function FindSpecialist() {
         // Cleanup on unmount
         return () => {
             if (gallery) {
-                gallery.removeEventListener('scroll', handleScroll);
+                gallery.removeEventListener("scroll", handleScroll);
             }
         };
     }, []);
 
-    // React.useEffect(()=> {
-    //     let slider = document.getElementById("gallery")
-    //     slider.addEventListener("scrollend", () => {
-    //         setEndReached(true)
-    //     })
-    // })
-
     function backScroll() {
-        let slider = document.getElementById("gallery")
-        slider.scrollLeft = slider.scrollLeft - 500
+        let slider = document.getElementById("gallery");
+        slider.scrollLeft = slider.scrollLeft - 500;
     }
 
     function forwardScroll() {
-        let slider = document.getElementById("gallery")
-        slider.scrollLeft = slider.scrollLeft + 500
+        let slider = document.getElementById("gallery");
+        slider.scrollLeft = slider.scrollLeft + 500;
     }
 
     console.log(physicians);
@@ -68,21 +62,27 @@ function FindSpecialist() {
         <section className="relative">
             <div className="flex items-center justify-between mt-10">
                 <h2 className="font-semibold">Find Specialist</h2>
-                <div className="flex items-center gap-2 text-[#667185] font-semibold">
-                    <span>See all</span>
-                    <GrNext />
-                </div>
+                <Link to="/home/specialists" className="cursor-pointer">
+                    <div className="flex items-center gap-2 text-[#667185] font-semibold">
+                        <span>See all</span>
+                        <GrNext />
+                    </div>
+                </Link>
             </div>
             <div className="relative mt-6 ">
-                <div id="gallery" ref={galleryRef} className=" flex items-center gap-5 overflow-x-scroll scroll-smooth">
-                    {physicians.map((physician) => {
+                <div
+                    id="gallery"
+                    ref={galleryRef}
+                    className=" flex items-center gap-5 overflow-x-scroll scroll-smooth"
+                >
+                    {physicians.filter((physician) => physician.id < 6).map((filteredPhysician) => {
                         return (
                             <PhysicianCard
-                                key={physician.id}
-                                src={physician.image}
-                                fullName={physician.fullName}
-                                isOnline={physician.isOnline}
-                                jobTitle={physician.jobTitle}
+                                key={filteredPhysician.id}
+                                src={filteredPhysician.image}
+                                fullName={filteredPhysician.fullName}
+                                isOnline={filteredPhysician.isOnline}
+                                jobTitle={filteredPhysician.jobTitle}
                             />
                         );
                     })}
@@ -91,14 +91,18 @@ function FindSpecialist() {
             <div className="flex justify-end mt-5">
                 <div className="flex items-center gap-4">
                     <button
-                        className={`border p-2 rounded-lg ${atStart ? "opacity-40" : ""}`}
+                        className={`border p-2 rounded-lg ${
+                            atStart ? "opacity-40" : ""
+                        }`}
                         onClick={backScroll}
                         disabled={atStart}
                     >
                         <GrPrevious />
                     </button>
                     <button
-                        className={`border p-2 rounded-lg ${atEnd ? "opacity-40" : ""}`}
+                        className={`border p-2 rounded-lg ${
+                            atEnd ? "opacity-40" : ""
+                        }`}
                         onClick={forwardScroll}
                         disabled={atEnd}
                     >

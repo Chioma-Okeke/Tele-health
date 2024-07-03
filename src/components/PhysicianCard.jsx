@@ -2,9 +2,9 @@
 // import React from 'react'
 import { PiChatCircleText } from "react-icons/pi";
 
-function PhysicianCard({ key, src, fullName, isOnline, jobTitle }) {
+function PhysicianCard({ src, fullName, isOnline, jobTitle }) {
     return (
-        <div className="rounded-xl border p-2 min-w-60 cursor-pointer" key={key}>
+        <div className="rounded-xl border p-2 min-w-60 cursor-pointer">
             <img src={src} alt="" className="w-full aspect-[5/4] object-cover"/>
             <h4 className="font-bold my-1">{fullName}</h4>
             <p className="text-sm">{jobTitle}</p>

@@ -4,6 +4,7 @@ import Appointments from "./pages/Appointments";
 import MentalSupport from "./pages/MentalSupport";
 import MyHealth from "./pages/MyHealth";
 import SymptomChecker from "./pages/SymptomChecker";
+import Specialists from "./pages/Specialists";
 
 
 export function PageRoutes () {
@@ -11,6 +12,7 @@ export function PageRoutes () {
         <Router>
             <Routes>
                 <Route exact path="/home" element={<Home/>}/>
+                <Route exact path="/home/specialists" element={<Specialists/>}/>
                 <Route exact path="/appointments" element={<Appointments/>}/>
                 <Route exact path="/mentalsupport" element={<MentalSupport/>}/>
                 <Route exact path="/myhealth" element={<MyHealth/>}/>
