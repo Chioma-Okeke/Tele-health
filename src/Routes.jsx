@@ -5,12 +5,14 @@ import MentalSupport from "./pages/MentalSupport";
 import MyHealth from "./pages/MyHealth";
 import SymptomChecker from "./pages/SymptomChecker";
 import Specialists from "./pages/Specialists";
+import FirstPage from "./pages/FirstPage";
 
 
 export function PageRoutes () {
     return (
         <Router>
             <Routes>
+                <Route exact path="/" element={<FirstPage/>}/>
                 <Route exact path="/home" element={<Home/>}/>
                 <Route exact path="/home/specialists" element={<Specialists/>}/>
                 <Route exact path="/appointments" element={<Appointments/>}/>

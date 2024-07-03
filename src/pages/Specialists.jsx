@@ -1,6 +1,5 @@
 // import React from 'react'
 
-import MainComponent from "../components/home/MainComponent"
 import Navbar from "../components/shared/Navbar"
 import MainSection from "../components/specialists/MainSection"
 
