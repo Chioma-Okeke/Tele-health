@@ -90,6 +90,7 @@ export default function CalendarComponent() {
     });
 
     function previousMonth() {
+        console.log(days, "days")
         let firstDayNextMonth = add(firstDayCurrentMonth, { months: -1 });
         setCurrentMonth(format(firstDayNextMonth, "MMM-yyyy"));
     }

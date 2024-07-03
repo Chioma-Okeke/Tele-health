@@ -4,12 +4,12 @@
 import logo from "../../assets/logo.png";
 import { navOptions } from "../../data/nav-options";
 import UserNavProfile from "./UserNavProfile";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
-function Navbar({ currentPage }) {
+function Navbar() {
     return (
         <div className="sticky top-0 left-0 py-4 bg-white border border-r-[#E4E7EC] min-h-lvh min-w-60 w-[248px]">
-            <Link to="/" className="flex items-center mb-4">
+            <Link to="/home" className="flex items-center mb-4">
                 <img
                     src={logo}
                     alt="Company Logo"
@@ -22,17 +22,19 @@ function Navbar({ currentPage }) {
                 {navOptions.map(({ id, Icon, navTitle, notification }) => {
                     let params = navTitle.toLowerCase().split(" ").join("")
                     return (
-                        <Link
+                        <NavLink
                             to={`/${params}`}
                             key={id}
-                            className={`flex gap-3 items-center py-3 px-2 cursor-pointer hover:bg-[#E5FFF3] ${
-                                currentPage === navTitle ? "bg-[#E5FFF3]" : ""
-                            }`}
+                            className={({isActive}) => {
+                                return (
+                                    "flex gap-3 items-center py-3 px-2 cursor-pointer hover:bg-[#E5FFF3] " + (isActive ? "bg-[#E5FFF3]" : "")
+                                )
+                            }}
                         >
                             <Icon />
                             <p>{navTitle}</p>
                             <span className="px-2 rounded-md bg-[#E5FFF3] ml-auto text-sm text-[#006635]">{notification}</span>
-                        </Link>
+                        </NavLink>
                     );
                 })}
             </div>
