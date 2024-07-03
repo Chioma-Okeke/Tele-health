@@ -1,8 +1,8 @@
 // import React from 'react'
 import Navbar from '../components/shared/Navbar'
 import Header from '../components/shared/Header'
-import MainComponent from '../components/home/MainComponent'
 import SideSection from '../components/appointments/SideSection'
+import MainSection from '../components/appointments/MainSection'
 
 function Appointments() {
   return (
@@ -11,7 +11,7 @@ function Appointments() {
         <div className="w-full">
             <Header title="Appointments"/>
             <div className="flex items-start justify-center gap-5 pr-5 w-full relative">
-                <MainComponent/>
+                <MainSection/>
                 <SideSection/>
             </div>
         </div>

@@ -37,8 +37,26 @@ const meetings = [
         jobTitle: "General Practitioner",
         imageUrl:
             "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-        startDatetime: "2024-07-03T17:30",
-        endDatetime: "2024-07-03T18:30",
+        startDatetime: "2024-07-13T17:30",
+        endDatetime: "2024-07-13T18:30",
+    },
+    {
+        id: 3,
+        practitionerName: "Dr. Chioma Princess",
+        jobTitle: "General Practitioner",
+        imageUrl:
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        startDatetime: "2024-07-10T17:30",
+        endDatetime: "2024-07-10T18:30",
+    },
+    {
+        id: 4,
+        practitionerName: "Dr. Chukwuebuka Okeke",
+        jobTitle: "General Practitioner",
+        imageUrl:
+            "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
+        startDatetime: "2024-07-23T17:30",
+        endDatetime: "2024-07-23T18:30",
     },
     // {
     //     id: 2,
@@ -190,7 +208,7 @@ export default function CalendarComponent() {
                                             (isEqual(day, selectedDay) ||
                                                 isToday(day)) &&
                                                 "font-semibold",
-                                            "mx-auto relative h-8 w-8 items-center justify-center rounded-md"
+                                            "mx-1 relative h-8 w-8 items-center justify-center rounded-md"
                                         )}
                                     >
                                         <time
@@ -207,7 +225,7 @@ export default function CalendarComponent() {
                                                     day
                                                 )
                                             ) && (
-                                                <div className="absolute right-0 top-0 w-2 h-2 rounded-tr-full rounded-tl-3xl bg-[#006635]"></div>
+                                                <div className="absolute right-0 top-0 w-2 h-2 rounded-bl-full rounded-tr-full rounded-tl-3xl bg-[#006635]"></div>
                                             )}
                                         </div>
                                     </button>
